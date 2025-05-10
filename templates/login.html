@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <style>
+        body {
+            background-color: grey;
+            margin: 0;
+            height: 100vh;
+        }
+
+        .display-time {
+            top: 10px;
+            background-color: grey;
+            color: black;
+            padding: 10px;
+            border-radius: 10px;
+            width: fit-content;
+        }
+
+        .text-box {
+            background-color: grey;
+            color: black;
+            padding: 10px;
+            border-radius: 10px;
+            width: fit-content;
+        }
+
+        label {
+            display: block;
+            float: left;
+            width: 150px;
+            text-align: right;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        input.submit {
+            margin-left: 160px;
+        }
+
+        .error-message {
+            color: red;
+            font-weight: bold;
+        }
+
+        .success-message {
+            color: green;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="display-time">
+        Page Opened on Date/Time: {{ time }}
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <div>
+        {% for category, message in messages %}
+        <p class="{{ category }}">{{ message }}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+
+    <div class="text-box">
+        <h4><a href="{{ url_for('home')}}">Home</a></h4>
+        <h3>Please Log In</h3>
+        <form action="{{ url_for('login') }}" method="POST">
+            <div id="username">
+                <label for="username">Username:</label>
+                <input type="text" name="username">
+            </div>
+            <div id="password">
+                <label for="password">Password: </label>
+                <input type="password" name="password">
+            </div>
+            <div id="submit">
+                <input type="submit" class="submit" value="Log In">
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

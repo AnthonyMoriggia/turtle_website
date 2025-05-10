@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- home page for my website -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turtles Home</title>
+    <style>
+        body {
+            margin = 0;
+            background-image: url("https://images.pexels.com/photos/71101/pexels-photo-71101.jpeg");
+            background-size: cover;
+            background-position: 50% 0%;
+            background-repeat: no-repeat;
+        }
+
+        .text-box {
+            background-color: green;
+            color: black;
+            padding: 10px;
+            border-radius: 10px;
+            width: fit-content;
+        }
+
+        .display-time {
+            top: 10px;
+            background-color: green;
+            color: black;
+            padding: 10px;
+            border-radius: 10px;
+            width: fit-content;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="display-time">
+        Page Opened on Date/Time: {{ time }}
+    </div>
+
+    <div class="text-box">
+        <!-- login and register links -->
+        <h4><a href="{{ url_for('login')}}">Login</a> or
+            <a href="{{ url_for('register')}}">Register</a></h4>
+        <!-- update password and logout -->
+        <h4><a href="{{ url_for('password_update') }}">Update Password</a>
+        <a href="{{ url_for('logout') }}">Logout</a></h4>
+
+        <h3>{{ welcome_message }} </h3>
+        <h1><b> Turtles Are Great! </b></h1>
+        <h2><b> Let's learn some Turtle facts </b></h2>
+        <p>You can check out the facts by clicking on the links!</p>
+        <ul>
+            <li><a href="{{ url_for('largest') }}"><b>Largest Turtles</b></a></li>
+            <li><a href="{{ url_for('oldest') }}"><b>Oldest Turtles</b></a></li>
+            <li><a href="{{ url_for('facts') }}"><b>Turtle Facts</b></a></li>
+            <li><a href="https://turtlesurvival.org/?srsltid=AfmBOoq4_Ye30JQQLy6eOy2hm9iKD3j1QbWtMSwg1L0Q9OmJt325zGwC">
+            <b>Support Turtle Survival</b></a></li>
+            <li><a href="https://unsplash.com/s/photos/turtle"><b>Pictures Of Turtles From Unsplash</b></a></li>
+            <li><a href="https://www.humanesociety.org/resources/thinking-getting-pet-turtle">
+            <b>Turtles As Pets</b></a></li>
+        </ul>
+        <p>After seeing some of these majestic creatures, I hope you like turtles as much as I do!</p>
+    </div>
+</body>
+</html>

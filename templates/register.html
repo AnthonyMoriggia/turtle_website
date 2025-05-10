@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <style>
+        body {
+            background-color: grey;
+            margin: 0;
+            height: 100vh;
+        }
+
+        .display-time {
+            top: 10px;
+            background-color: grey;
+            color: black;
+            padding: 10px;
+            border-radius: 10px;
+            width: fit-content;
+        }
+
+        .text-box {
+            background-color: grey;
+            color: black;
+            padding: 10px;
+            border-radius: 10px;
+            width: fit-content;
+        }
+
+        label {
+            display: block;
+            float: left;
+            width: 150px;
+            text-align: right;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        input.submit {
+            margin-left: 160px;
+        }
+
+        .error-message {
+            color: red;
+            font-weight: bold;
+        }
+
+        .success-message {
+            color: green;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="display-time">
+        Page Opened on Date/Time: {{ time }}
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <ul>
+        {% for category, message in messages %}
+        <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+
+    <h4><a href="{{ url_for('home')}}">Home</a></h4>
+    <h3>Please Register Below</h3>
+    <form action="{{ url_for('register') }}" method="POST">
+        <div id="email">
+            <label for="email">Email:</label>
+            <input type="text" name="email" required>
+        </div>
+        <div id="username">
+            <label for="username">Username:</label>
+            <input type="text" name="username" required>
+        </div>
+        <div id="password">
+            <label for="password">Password:</label>
+            <input type="password" name="password" required>
+        </div>
+        <div id="getUpdates">
+            <label>Email Updates:</label>
+            <input type="checkbox" id="emailUpdates" name="emailUpdates">
+        </div>
+        <div id="submit">
+            <input type="submit" class="submit" value="Register">
+        </div>
+    </form>
+
+</body>
+</html>

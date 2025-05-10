@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- web page for turtle facts -->
+<head>
+    <meta charset="UTF-8">
+    <title>Turtle Facts</title>
+    <style>
+        body {
+            margin = 0;
+            background-image: url("https://images.pexels.com/photos/847393/pexels-photo-847393.jpeg");
+            background-size: cover;
+            background-position: 50% 0%;
+            background-repeat: no-repeat;
+        }
+
+        .display-time {
+            top: 10px;
+            background-color: aqua;
+            color: black;
+            padding: 10px;
+            border-radius: 10px;
+            width: fit-content;
+        }
+
+        .text-box {
+            background-color: aqua;
+            color: black;
+            padding: 10px;
+            border-radius: 10px;
+            width: fit-content;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="display-time">
+        Page Opened on Date/Time: {{ time }}
+    </div>
+
+    <div class="text-box">
+        <h4><a href="{{ url_for('home')}}">Home</a></h4>
+        <h1>5 Turtle Facts</h1>
+        <h2>Neat Facts About Turtles</h2>
+        <ul>
+            <li>Turtles are the one of the oldest reptile groups(over 200 million years!).</li>
+            <li>A turtles shell is part of their body, which means that they cannot come out of it.</li>
+            <li>A turtles environment determines their diet, some are even carnivores!</li>
+            <li>Even though many turtles live in the water, they breathe air and lay eggs on land.</li>
+            <li>Many turtle species are endangered, but there are many turtle sanctuaries worldwide!</li>
+        </ul>
+    </div>
+</body>
+</html>

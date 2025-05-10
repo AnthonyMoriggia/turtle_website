@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- web page for largest turtles -->
+<head>
+    <meta charset="UTF-8">
+    <title>Turtles Largest</title>
+    <style>
+        body {
+            background-color: aqua;
+            margin: 0;
+            height: 100vh;
+        }
+
+        .display-time {
+            top: 10px;
+            background-color: aqua;
+            color: black;
+            padding: 10px;
+            border-radius: 10px;
+            width: fit-content;
+        }
+
+        img {
+            display: block;
+            margin-top: 10px;
+            width: 200px;
+            height: auto;
+            margin-left: 50px;
+        }
+
+        ol li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="display-time">
+    Page Opened on Date/Time: {{ time }}
+    </div>
+
+    <h4><a href="{{ url_for('home')}}">Home</a></h4>
+    <h1>The 5 Largest Turtles</h1>
+    <h2>Size based on average weight and Straight Carapace(shell) Length</h2>
+    <h3>Source last updated December 7, 2022</h3>
+        <table border ="1">
+        <caption>Oldest Turtles</caption>
+        <tr>
+            <th>Name</th>
+            <th>Size(feet)</th>
+            <th>Weight(pounds)</th>
+            <th>Kingdom</th>
+            <th>Phylum</th>
+            <th>Subphylum</th>
+            <th>Class</th>
+            <th>Order</th>
+            <th>Family</th>
+            <th>Genus</th>
+            <th>Species</th>
+        </tr>
+        <tr>
+            <td>Leatherback Sea Turtle</td>
+            <td>7</td>
+            <td>2,000</td>
+            <td>Animalia</td>
+            <td>Chordata</td>
+            <td>Vertebrata</td>
+            <td>Reptilia</td>
+            <td>Testudines</td>
+            <td>Dermochelyidae</td>
+            <td>Dermochelys</td>
+            <td>Dermochelys coriacea</td>
+        </tr>
+        <tr>
+            <td>Loggerhead Sea Turtle</td>
+            <td>7</td>
+            <td>1,200</td>
+            <td>Animalia</td>
+            <td>Chordata</td>
+            <td>Vertebrata</td>
+            <td>Reptilia</td>
+            <td>Testudines</td>
+            <td>Cheloniidae</td>
+            <td>Caretta</td>
+            <td>Caretta caretta</td>
+        </tr>
+        <tr>
+            <td>Green Sea Turtle</td>
+            <td>4.6</td>
+            <td>1,100</td>
+            <td>Animalia</td>
+            <td>Chordata</td>
+            <td>Vertebrata</td>
+            <td>Reptilia</td>
+            <td>Testudines</td>
+            <td>Cheloniidae</td>
+            <td>Chelonia</td>
+            <td>Chelonia mydas</td>
+        </tr>
+        <tr>
+            <td>Galapagos Giant Tortoise</td>
+            <td>6.1</td>
+            <td>880</td>
+            <td>Animalia</td>
+            <td>Chordata</td>
+            <td>Vertebrata</td>
+            <td>Reptilia</td>
+            <td>Testudines</td>
+            <td>Testudinidae</td>
+            <td>Chelonoidis</td>
+            <td>Chelonoidis nigra</td>
+        </tr>
+        <tr>
+            <td>Aldabra Giant Tortoise</td>
+            <td>4.9</td>
+            <td>800</td>
+            <td>Animalia</td>
+            <td>Chordata</td>
+            <td>Vertebrata</td>
+            <td>Reptilia</td>
+            <td>Testudines</td>
+            <td>Testudinidae</td>
+            <td>Aldabrachelys</td>
+            <td>Aldabrachelys gigantea</td>
+        </tr>
+
+    </table>
+    <ol>
+        <li>
+            Leatherback Sea Turtle: 7 feet, 2,000 pounds
+            <img src="{{url_for('static', filename='images/leatherback.jpg')}}" alt="Leatherback Turtle">
+        </li>
+        <li>
+            Loggerhead Sea Turtle: 7 feet, 1,200 pounds
+            <img src="{{url_for('static', filename='images/loggerhead.jpg')}}" alt="Loggerhead Turtle">
+        </li>
+        <li>
+            Green Sea Turtle: 4.6 feet, 1100 pounds
+            <img src="{{url_for('static', filename='images/green.jpg')}}" alt="Green Sea Turtle">
+        </li>
+        <li>
+            Galapagos Giant Tortoise: 6.1 feet, 880 pounds
+            <img src="{{url_for('static', filename='images/galapagos.jpg')}}" alt-="Galapagos Tortoise">
+        </li>
+        <li>
+            Aldabra Giant Tortoise: 4.9 feet, 800 pounds
+            <img src="{{url_for('static', filename='images/aldabra.jpg')}}" alt="Aldabra Tortoise">
+        </li>
+    </ol>
+</body>
+</html>

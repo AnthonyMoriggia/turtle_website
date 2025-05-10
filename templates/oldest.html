@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- web page for oldest turtles -->
+<head>
+    <meta charset="UTF-8">
+    <title>Turtles Oldest</title>
+    <style>
+        body {
+            background-color: aqua;
+            margin: 0;
+            height: 100vh;
+        }
+
+        .display-time {
+            top: 10px;
+            background-color: aqua;
+            color: black;
+            padding: 10px;
+            border-radius: 10px;
+            width: fit-content;
+        }
+
+        img {
+            display: block;
+            margin-top: 10px;
+            width: 200px;
+            height: auto;
+            margin-left: 50px;
+        }
+
+        ol li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="display-time">
+    Page Opened on Date/Time: {{ time }}
+    </div>
+
+    <h4><a href="{{ url_for('home')}}">Home</a></h4>
+    <h1>The 5 Oldest Turtles</h1>
+    <h2>Some of these ages are contested and not confirmed</h2>
+    <h3>Source last updated October 10, 2024</h3>
+    <table border ="1">
+        <caption>Oldest Turtles</caption>
+        <tr>
+            <th>Name</th>
+            <th>Age(years)</th>
+            <th>Kingdom</th>
+            <th>Phylum</th>
+            <th>Subphylum</th>
+            <th>Class</th>
+            <th>Order</th>
+            <th>Suborder</th>
+            <th>Superfamily</th>
+            <th>Family</th>
+            <th>Genus</th>
+            <th>Species</th>
+        </tr>
+        <tr>
+            <td>Alagba</td>
+            <td>344</td>
+            <td>Animalia</td>
+            <td>Chordata</td>
+            <td>Vertebrata</td>
+            <td>Reptilia</td>
+            <td>Testudines</td>
+            <td>Cryptodira</td>
+            <td>Testudinoidea</td>
+            <td>Testudinidae</td>
+            <td>Centrochelys</td>
+            <td>Centrochelys sulcata</td>
+        </tr>
+        <tr>
+            <td>Adwaita</td>
+            <td>255</td>
+            <td>Animalia</td>
+            <td>Chordata</td>
+            <td>Vertebrata</td>
+            <td>Reptilia</td>
+            <td>Testudines</td>
+            <td>Cryptodira</td>
+            <td>Testudinoidea</td>
+            <td>Testudinidae</td>
+            <td>Aldabrachelys</td>
+            <td>Aldabrachelys gigantea</td>
+        </tr>
+        <tr>
+            <td>Jonathan</td>
+            <td>191</td>
+            <td>Animalia</td>
+            <td>Chordata</td>
+            <td>Vertebrata</td>
+            <td>Reptilia</td>
+            <td>Testudines</td>
+            <td>Cryptodira</td>
+            <td>Testudinoidea</td>
+            <td>Testudinidae</td>
+            <td>Aldabrachelys</td>
+            <td>Aldabrachelys gigantea</td>
+
+        </tr>
+        <tr>
+            <td>Tui Malila</td>
+            <td>189</td>
+            <td>Animalia</td>
+            <td>Chordata</td>
+            <td>Vertebrata</td>
+            <td>Reptilia</td>
+            <td>Testudines</td>
+            <td>Cryptodira</td>
+            <td>Testudinoidea</td>
+            <td>Testudinidae</td>
+            <td>Astrochelys</td>
+            <td>Astrochelys radiata</td>
+        </tr>
+        <tr>
+            <td>Harriet</td>
+            <td>175</td>
+            <td>Animalia</td>
+            <td>Chordata</td>
+            <td>Vertebrata</td>
+            <td>Reptilia</td>
+            <td>Testudines</td>
+            <td>Cryptodira</td>
+            <td>Testudinoidea</td>
+            <td>Testudinidae</td>
+            <td>Chelonoidis</td>
+            <td>Chelonoidis nigra</td>
+        </tr>
+
+    </table>
+    <ol>
+        <li>
+            Alagba -- African Spur-Thighed Tortoise -- 344 years old
+            <img src="{{url_for('static', filename='images/alagba.jpg')}}" alt="Alagba">
+        </li>
+        <li>
+            Adwaita -- Aldabra Giant Tortoise -- 255 years old
+            <img src="{{url_for('static', filename='images/adwaita.jpg')}}" alt="Adwaita">
+        </li>
+        <li>
+            Jonathan -- Seychelles Giant Tortoise -- 191 years old
+            <img src="{{url_for('static', filename='images/jonathon.jpg')}}" alt="Jonathon">
+        </li>
+        <li>
+            Tui Malila -- Radiated Tortoise -- 189 years old
+            <img src="{{url_for('static', filename='images/tui.jpg')}}" alt="Tu'i Malila">
+        </li>
+        <li>
+            Harriet -- Giant Galapagos Land Tortoise -- 175 years old
+            <img src="{{url_for('static', filename='images/harriet.jpg')}}" alt="Harriest">
+        </li>
+    </ol>
+</body>
+</html>
